@@ -1,0 +1,38 @@
+
+> zarizo@0.1.0 lint
+> eslint
+
+
+C:\Users\pecul\OneDrive\Documents\Zarizo Marketplace\zarizo\src\app\(dashboard)\admin\commissions\page.tsx
+  4:56  warning  'Filter' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\pecul\OneDrive\Documents\Zarizo Marketplace\zarizo\src\app\(dashboard)\business\page.tsx
+  4:63  warning  'ArrowUpRight' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\pecul\OneDrive\Documents\Zarizo Marketplace\zarizo\src\app\(dashboard)\dashboard\products\page.tsx
+  1:8  warning  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\pecul\OneDrive\Documents\Zarizo Marketplace\zarizo\src\app\about\page.tsx
+  23:23   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  67:167  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\pecul\OneDrive\Documents\Zarizo Marketplace\zarizo\src\app\products\[id]\page.tsx
+  21:11  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\pecul\OneDrive\Documents\Zarizo Marketplace\zarizo\src\app\products\[id]\page.tsx:21:11
+  19 |         const storedRef = JSON.parse(storedRefStr);
+  20 |         if (storedRef.expiresAt > new Date().getTime()) {
+> 21 |           setAgentRef(storedRef.code);
+     |           ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  22 |         }
+  23 |       } catch (error) {
+  24 |         console.error("Failed to parse referral data", error);  react-hooks/set-state-in-effect
+
+Ô£û 6 problems (3 errors, 3 warnings)
+
