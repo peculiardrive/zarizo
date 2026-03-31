@@ -15,12 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Zarizo | Grow sales. Expand reach.",
   description: "Zarizo helps businesses grow sales through agents and resellers by making product sharing, order attribution, and sales management simple.",
-  manifest: "/manifest.json",
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
-    title: "Zarizo",
-  },
   formatDetection: {
     telephone: false,
   },
