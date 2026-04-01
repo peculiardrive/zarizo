@@ -11,7 +11,22 @@ import { supabase } from "@/lib/supabase";
 
 export default function ProductDetailsPage() {
   const { id } = useParams();
-  const [agentRef, setAgentRef] = useState<string | null>(null);
+  const [agentRef, setAgentRef] = useState<string | null>(() => {
+    if (typeof window !== "undefined") {
+      const storedRefStr = localStorage.getItem("zarizo_referral");
+      if (storedRefStr) {
+        try {
+          const storedRef = JSON.parse(storedRefStr);
+          if (storedRef.expiresAt > new Date().getTime()) {
+            return storedRef.code;
+          }
+        } catch (error) {
+          console.error("Failed to parse referral data", error);
+        }
+      }
+    }
+    return null;
+  });
   const [product, setProduct] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [checkingOut, setCheckingOut] = useState(false);
@@ -49,19 +64,6 @@ export default function ProductDetailsPage() {
     }
 
     fetchProduct();
-
-    // 2. Check local storage for an existing referral marker
-    const storedRefStr = localStorage.getItem("zarizo_referral");
-    if (storedRefStr) {
-      try {
-        const storedRef = JSON.parse(storedRefStr);
-        if (storedRef.expiresAt > new Date().getTime()) {
-          setAgentRef(storedRef.code);
-        }
-      } catch (error) {
-        console.error("Failed to parse referral data", error);
-      }
-    }
   }, [id]);
 
   // Paystack Configuration

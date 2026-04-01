@@ -20,7 +20,7 @@ export default function AboutPage() {
           <span className="inline-flex items-center text-sm font-black tracking-widest uppercase text-blue-400 mb-6 bg-blue-900/50 px-4 py-2 rounded-full border border-blue-800">Our Motivation</span>
           <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6">Commerce, unlocked.</h1>
           <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto font-medium leading-relaxed">
-            Zarizo isn&apos;t just a marketplace. We are a digital sales conduit designed to help ambitious African businesses multiply their reach by equipping everyday people with the tools to become successful sales agents.
+            Zarizo isn{"'"}t just a marketplace. We are a digital sales conduit designed to help ambitious African businesses multiply their reach by equipping everyday people with the tools to become successful sales agents.
           </p>
         </div>
       </section>
@@ -64,7 +64,7 @@ export default function AboutPage() {
       <section className="bg-gray-50 py-24 flex items-center justify-center text-center px-6">
         <div className="max-w-2xl bg-white p-12 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-100">
           <h2 className="text-3xl font-black text-gray-900 mb-4">Want to participate?</h2>
-          <p className="text-gray-600 mb-8 font-medium">Whether you are building a storefront to leverage resellers or you just want to earn cash sharing links, there&apos;s a space for you in Zarizo.</p>
+          <p className="text-gray-600 mb-8 font-medium">Whether you are building a storefront to leverage resellers or you just want to earn cash sharing links, there{"'"}s a space for you in Zarizo.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
              <Link href="/signup" className="px-8 py-4 bg-gray-900 text-white rounded-xl font-bold hover:bg-black transition-colors">Start Network Dashboard</Link>
           </div>

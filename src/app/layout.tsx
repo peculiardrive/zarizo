@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
+  manifest: "/manifest.json",
+  themeColor: "#1e40af",
   openGraph: {
     type: "website",
     siteName: "Zarizo",
